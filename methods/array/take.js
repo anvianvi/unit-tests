@@ -9,7 +9,13 @@ function take(array, n = 1) {
     return [];
   }
 
-  return array.slice(0, Math.max(0, Math.min(parseInt(n), array.length)));
+  let result = [];
+  let resultIndex = 0;
+  n = parseInt(n);
+  for (let i = 0; i < Math.min(array.length, n); i++) {
+    result[resultIndex++] = array[i];
+  }
+  return result;
 
 }
 

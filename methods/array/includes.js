@@ -1,5 +1,5 @@
 function includes(collection, value, fromIndex = 0) {
-  if (typeof collection !== 'string' && !Array.isArray(collection) && typeof collection !== 'object') {
+  if (typeof collection !== 'string' && !(collection instanceof Object)) {
     throw new TypeError('collection must be a string, array, or object');
   }
   if (typeof fromIndex !== 'number' || isNaN(fromIndex)) {
@@ -9,10 +9,17 @@ function includes(collection, value, fromIndex = 0) {
   fromIndex = parseInt(fromIndex);
 
   if (typeof collection === 'string') {
-    return collection.indexOf(value, fromIndex) !== -1;
+    let start = fromIndex >= 0 ? fromIndex : collection.length + fromIndex;
+    return collection.indexOf(value, start) !== -1;
   }
 
-  return Object.values(collection).slice(fromIndex).some((item) => Object.is(item, value));
+  let values = Object.values(collection);
+  for (let i = fromIndex; i < values.length; i++) {
+    if (Object.is(values[i], value)) {
+      return true;
+    }
+  }
+  return false;
 }
 
 module.exports = includes;

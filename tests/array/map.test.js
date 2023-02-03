@@ -1,4 +1,4 @@
-const map = require('../methods/array/map');
+const map = require('../../methods/array/map');
 
 const square = (n) => n * n;
 const array = [1, 2, 3, 4];

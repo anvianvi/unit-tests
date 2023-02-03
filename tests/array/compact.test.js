@@ -1,4 +1,4 @@
-const compact = require('../methods/array/compact');
+const compact = require('../../methods/array/compact');
 
 describe('compact', () => {
   it('should remove all falsey values from the array', () => {

@@ -1,4 +1,4 @@
-const includes = require('../methods/array/includes');
+const includes = require('../../methods/array/includes');
 
 describe('includes', () => {
   it('should throw an error if fromIndex argument is not a number', () => {

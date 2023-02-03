@@ -1,4 +1,4 @@
-const take = require('../methods/array/take');
+const take = require('../../methods/array/take');
 
 describe('take', () => {
   it('should throw an error if first argument is not an array', () => {

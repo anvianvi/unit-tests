@@ -1,4 +1,4 @@
-const drop = require('../methods/array/drop');
+const drop = require('../../methods/array/drop');
 
 describe('drop', () => {
   it('should throw an error if first argument is not an array', () => {

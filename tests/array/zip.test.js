@@ -1,4 +1,4 @@
-const zip = require('../methods/array/zip');
+const zip = require('../../methods/array/zip');
 
 describe('zip', () => {
   it('should throw an error if any of the input arguments is not an array', () => {

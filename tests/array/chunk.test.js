@@ -1,4 +1,4 @@
-const chunk = require('../methods/array/chunk');
+const chunk = require('../../methods/array/chunk');
 
 describe('chunk', () => {
   it('should return an array of chunks with specified size', () => {

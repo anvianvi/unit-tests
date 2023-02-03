@@ -35,5 +35,3 @@ function merge(firstObject, secondObject) {
 }
 
 module.exports = merge;
-
-

@@ -10,15 +10,15 @@ describe('pick', () => {
     expect(() => pick(4, secondArg)).toThrowError(RangeError('First argument must be an object'));
   });
 
-  test('Should creates an object composed of the picked `object` properties', () => {
+  it('should create an object composed of the picked `object` properties', () => {
     const object = { 'a': 1, 'b': '2', 'c': 3 }
     expect(pick(object, ['a', 'c'])).toEqual({ 'a': 1, 'c': 3 });
   });
-  test('Should returns an empty object if properties array is empty', () => {
+  it('should return an empty object if properties array is empty', () => {
     const object = { a: 1, b: 2, c: 3, d: 4 };
     expect(pick(object, [])).toEqual({});
   });
-  test('Should returns a new object and does not modify the original object', () => {
+  it('should return a new object and does not modify the original object', () => {
     const object = { a: 1, b: 2, c: 3, d: 4 };
     const picked = pick(object, ['a', 'c']);
     expect(picked).toEqual({ a: 1, c: 3 });

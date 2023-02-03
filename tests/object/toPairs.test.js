@@ -9,17 +9,17 @@ describe('toPairs', () => {
     expect(() => toPairs(4, secondArg)).toThrowError(RangeError('First argument must be an object'));
   });
 
-  test('should сreate an array of own enumerable string keyed-value pairs for object entries', () => {
+  it('should сreate an array of own enumerable string keyed-value pairs for object entries', () => {
     function Foo() { this.a = 1; this.b = 2; }
     Foo.prototype.c = 3;
     expect(toPairs(new Foo)).toEqual([['a', 1], ['b', 2]]);
   });
-  test('should return an array of arrays where each sub-array is a key-value pair from the object', () => {
+  it('should return an array of arrays where each sub-array is a key-value pair from the object', () => {
     const object = { a: 1, b: '2', c: 3 };
     const result = toPairs(object);
     expect(result).toEqual([['a', 1], ['b', '2'], ['c', 3]]);
   });
-  test('should return an array of arrays where each sub-array is a key-value pair from the object in the order of insertion', () => {
+  it('should return an array of arrays where each sub-array is a key-value pair from the object in the order of insertion', () => {
     const object = {};
     object.a = 1;
     object.b = '2';
@@ -28,14 +28,14 @@ describe('toPairs', () => {
     expect(result).toEqual([['a', 1], ['b', '2'], ['c', 3]]);
   });
 
-  test('should return only own properties', () => {
+  it('should return only own properties', () => {
     const object = Object.create({ a: 1 });
     object.b = 2;
     const result = toPairs(object);
     expect(result).toEqual([['b', 2]]);
   });
 
-  test('should return a new array and does not modify the original object', () => {
+  it('should return a new array and does not modify the original object', () => {
     const object = { a: 1, b: '2', c: 3 };
     const result = toPairs(object);
     expect(result).toEqual([['a', 1], ['b', '2'], ['c', 3]]);

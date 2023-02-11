@@ -8,7 +8,7 @@ function dropWhile(array, identity) {
     if (typeof identity === 'function' && !identity(array[i])) {
       part_array[index++] = array[i];
     }
-    if (identity instanceof Array) {
+    if (Array.isArray(identity)) {
       if (!JSON.stringify(array[i]).includes(identity[0]) ||
         !JSON.stringify(array[i]).includes(identity[1])) {
         part_array[index++] = array[i];

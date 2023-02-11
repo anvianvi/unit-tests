@@ -1,14 +1,14 @@
-function filter(array, Function) {
+function filter(array, callback) {
   if (!Array.isArray(array)) {
     throw new TypeError('First argument must be an array');
   }
-  if (typeof Function !== 'function') {
+  if (typeof callback !== 'function') {
     throw new TypeError('Second argument must be a function');
   }
   let index = 0;
   const result = [];
   for (let i = 0; array.length > i; i += 1) {
-    if (Function(array[i])) {
+    if (callback(array[i])) {
       result[index] = array[i];
       index += 1;
     }

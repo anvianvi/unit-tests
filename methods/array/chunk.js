@@ -1,5 +1,5 @@
 function chunk(array, size) {
-  if (!(array instanceof Array)) {
+  if (!Array.isArray(array)) {
     throw new TypeError('First argument must be an array');
   }
   if (!Number.isInteger(size) || size < 1) {

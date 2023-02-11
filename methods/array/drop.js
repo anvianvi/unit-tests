@@ -1,8 +1,8 @@
 function drop(array, n = 1) {
-  if (!(array instanceof Array)) {
+  if (!Array.isArray(array)) {
     throw new TypeError('First argument must be an array');
   }
-  if (typeof n !== 'number' || isNaN(n)) {
+  if (isNaN(n)) {
     throw new TypeError('Second argument must be a integer');
   }
   const dropped = [];

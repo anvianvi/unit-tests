@@ -1,6 +1,6 @@
 
 function compact(array) {
-  if (!(array instanceof Array)) {
+  if (!Array.isArray(array)) {
     throw new TypeError('Argument must be an array');
   }
   const compacted = [];
@@ -12,5 +12,6 @@ function compact(array) {
   }
   return compacted;
 }
+
 
 module.exports = compact;
